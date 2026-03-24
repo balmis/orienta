@@ -1,3 +1,3 @@
-export const EMAILJS_SERVICE_ID = 'TU_SERVICE_ID'
-export const EMAILJS_TEMPLATE_ID = 'TU_TEMPLATE_ID'
-export const EMAILJS_PUBLIC_KEY = 'TU_PUBLIC_KEY'
+export const EMAILJS_SERVICE_ID = 'service_43ksp9q'
+export const EMAILJS_TEMPLATE_ID = 'template_jpsf8fh'
+export const EMAILJS_PUBLIC_KEY = 'OzD6v-KJ7EUXfPtMA'
