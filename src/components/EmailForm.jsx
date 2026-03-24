@@ -17,11 +17,20 @@ export default function EmailForm({ top3 }) {
     const ciclo2 = top3[1]?.nombre || ''
     const ciclo3 = top3[2]?.nombre || ''
 
-    try {
+   try {
       await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
-        { nombre, email, ciclo1, ciclo2, ciclo3 },
+        {
+          nombre,
+          email,
+          ciclo1,
+          enlace1: top3[0]?.enlace,
+          ciclo2,
+          enlace2: top3[1]?.enlace,
+          ciclo3,
+          enlace3: top3[2]?.enlace,
+        },
         EMAILJS_PUBLIC_KEY
       )
 
