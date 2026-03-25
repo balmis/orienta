@@ -4,7 +4,7 @@ export default function OptionButton({ opcion, seleccionado, onClick, deshabilit
       onClick={onClick}
       disabled={deshabilitado}
       className={[
-        'w-full text-left p-4 md:p-5 rounded-2xl border-2 transition-all duration-150',
+        'w-full text-left p-4 md:p-5 lg:p-6 rounded-2xl border-2 transition-all duration-150',
         'flex items-start gap-3',
         seleccionado
           ? 'border-orange-500 bg-orange-50'
@@ -13,9 +13,9 @@ export default function OptionButton({ opcion, seleccionado, onClick, deshabilit
           : 'border-gray-200 bg-white active:scale-[0.98] active:border-gray-300',
       ].join(' ')}
     >
-      <span className="text-2xl md:text-3xl leading-none mt-0.5 shrink-0">{opcion.emoji}</span>
+      <span className="text-2xl md:text-3xl lg:text-4xl leading-none mt-0.5 shrink-0">{opcion.emoji}</span>
       <span
-        className={`text-sm md:text-base font-medium leading-snug flex-1 ${
+        className={`text-sm md:text-base lg:text-lg font-medium leading-snug flex-1 ${
           seleccionado ? 'text-orange-900' : 'text-gray-800'
         }`}
       >
@@ -27,7 +27,7 @@ export default function OptionButton({ opcion, seleccionado, onClick, deshabilit
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
             fill="currentColor"
-            className="w-5 h-5 md:w-6 md:h-6"
+            className="w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7"
           >
             <path
               fillRule="evenodd"

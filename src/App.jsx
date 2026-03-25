@@ -86,14 +86,14 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
-      <div className="w-full max-w-lg md:max-w-2xl mx-auto flex flex-col min-h-screen">
+      <div className="w-full max-w-lg md:max-w-2xl lg:max-w-5xl mx-auto flex flex-col min-h-screen">
         {/* Header */}
         <header
           className="text-white text-center py-3.5 px-4 sticky top-0 z-20 shadow-sm"
           style={{ backgroundColor: '#1e3a5f' }}
         >
-          <p className="text-sm md:text-lg font-bold tracking-wide">
-            IES Doctor Balmis · Feria de Empleo 2026
+          <p className="text-sm md:text-lg lg:text-xl font-bold tracking-wide">
+            Descubre tu Ciclo Formativo ideal · IES Doctor Balmis
           </p>
         </header>
 
@@ -133,7 +133,7 @@ function App() {
         </main>
 
         {/* Footer */}
-        <footer className="text-center text-xs md:text-sm text-gray-400 py-3 md:py-4 border-t border-gray-100 bg-white">
+        <footer className="text-center text-xs md:text-sm lg:text-base text-gray-400 py-3 md:py-4 lg:py-5 border-t border-gray-100 bg-white">
           IES Doctor Balmis · Alicante
         </footer>
       </div>

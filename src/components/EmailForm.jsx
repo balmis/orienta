@@ -18,21 +18,28 @@ export default function EmailForm({ top3 }) {
     const ciclo3 = top3[2]?.nombre || ''
 
    try {
-      await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        {
+        const letras = ['A', 'B']
+        const extras = [top3[1], top3[2]].filter(c => c?.nombre)
+        const opcionesExtra = extras.length === 0 ? '' :
+          `<p>🔄 OTRAS OPCIONES QUE ENCAJAN CONTIGO:</p><p>&nbsp;</p>` +
+          extras.map((c, i) =>
+            `<p><strong>- ${letras[i]})&nbsp;${c.nombre}</strong></p><p>🔗&nbsp;${c.enlace || ''}</p><p>&nbsp;</p>`
+          ).join('')
+
+        const templateParams = {
           nombre,
           email,
-          ciclo1,
-          enlace1: top3[0]?.enlace,
-          ciclo2,
-          enlace2: top3[1]?.enlace,
-          ciclo3,
-          enlace3: top3[2]?.enlace,
-        },
-        EMAILJS_PUBLIC_KEY
-      )
+          ciclo1: top3[0]?.nombre || '',
+          enlace1: top3[0]?.enlace || '',
+          opciones_html: opcionesExtra,
+        }
+
+        await emailjs.send(
+          EMAILJS_SERVICE_ID,
+          EMAILJS_TEMPLATE_ID,
+          templateParams,
+          EMAILJS_PUBLIC_KEY
+        )
 
       // Google Forms — fire and forget (no-cors)
       const formData = new URLSearchParams()
